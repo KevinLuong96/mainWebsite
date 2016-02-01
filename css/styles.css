@@ -41,18 +41,22 @@ p{
   flex:1;
   flex-direction: column;
   align-items: center;
+  background:linear-gradient(rgba(20,20,20,0.55),rgba(20, 20, 20, 0.85));
+  box-shadow: 0 0 10px;
+  z-index: 1;
 }
 
 .main-nav li{
   width:100%;
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
 }
 
 .main-nav a{
   display:block;
   padding: 0.25em;
   font-size:1.3em;
+  color:white;
 }
 
 /*Banner*/
@@ -65,7 +69,7 @@ p{
 .background img{
   width:100%;
   padding-left: 0;
-  -webkit-filter: saturate(90%);
+  -webkit-filter: saturate(70%);
   /*float:left;*/
 }
 
@@ -95,8 +99,7 @@ p{
 
   .main-nav li{
     width:auto;
-    border: 1px solid black;
-    border-radius: 1px;
+    border: 1px solid grey;
   }
 
   .main-nav a{
@@ -120,11 +123,36 @@ p{
   .banner-text{
     top: 1.5em;
   }
+
+  .about{
+    width:80%;
+    margin: 0 10%;
+    background-color: #ECECEA;
+  }
 }
 
-@media(min-width: 50em){
+@media(min-width: 52em){
   .main-nav{
-    align-items: flex-end;
-    justify-content: ;
+    justify-content: flex-end;
+    position: fixed;
+    top:0;
+    width:100%;
+  }
+
+  .main-nav li{
+    margin: 0 1em;
+  }
+
+  body{
+    margin-top: 40px;
+    min-height: 100vh;
+  }
+
+  .banner h1{
+    font-size: 500%;
+  }
+
+  .banner p{
+    font-size: 300%;
   }
 }
