@@ -9,6 +9,8 @@
 
 body{
   font-family: OpenSans;
+  background-color: #ECECEA;
+  height: 100vh;
 }
 
 h1{
@@ -30,20 +32,28 @@ p{
   margin:0;
 }
 
+/*-----------------------
+---------Header----------
+-------------------------*/
 
-
-.main-header,
-.main-nav{
+.main-header{
   display:flex;
+  flex-direction: column;
+  background:linear-gradient(rgba(20,20,20,0.55),rgba(20, 20, 20, 0.85));
+  box-shadow: 0 0 10px;
+  z-index: 2;
+
 }
 
+
 .main-nav{
+  display:none;
   flex:1;
   flex-direction: column;
   align-items: center;
-  background:linear-gradient(rgba(20,20,20,0.55),rgba(20, 20, 20, 0.85));
-  box-shadow: 0 0 10px;
-  z-index: 1;
+  /*background:linear-gradient(rgba(20,20,20,0.55),rgba(20, 20, 20, 0.85));*/
+  /*box-shadow: 0 0 10px;*/
+  /*z-index: 1;*/
 }
 
 .main-nav li{
@@ -59,23 +69,28 @@ p{
   color:white;
 }
 
-/*Banner*/
-.background{
-  width:auto;
-  margin:0;
-  /*float:left;*/
+.dropdown {
+  width:20px;
+  align-self: flex-end;
+  margin: 2px;
+  margin-left:auto;
+  margin-right: 2px;
 }
 
+
+/*-----------------------
+---------Banner----------
+-------------------------*/
 .background img{
   width:100%;
   padding-left: 0;
   -webkit-filter: saturate(70%);
-  /*float:left;*/
+  max-height: calc(100vh - 40px);
+
 }
 
 .banner{
   position:relative;
-  height:100%;
 }
 
 .banner-text{
@@ -86,24 +101,97 @@ p{
   color: white;
 }
 
-/*About*/
-.about{
-  width:90%;
-  margin:0 5%;
+.banner-text h1{
+  font-size: 1em;
 }
 
+.banner-text p{
+  font-size: 0.5em;
+  margin-top: -0.15em;
+}
+.background{
+  margin:0;
+}
 
-/*Media Queries*/
+.banner a{
+  position:absolute;
+  bottom: 1em;
+  left:0;
+  color:white;
+  font-size: 0.5em;
+}
+/*-----------------------
+---------Content----------
+-------------------------*/
+.about,
+.contact{
+  width:90%;
+  margin:0 5% 10px 5%;
+  background-color: rgba(190,190,190,0.55);
+  box-shadow: 3px 3px 2px 0 #888888;
+  padding: 0 10px;
+  border-radius: 10px;
+}
 
-@media(min-width: 35em){
+.active{
+  box-shadow: inset 0px 0px 10px #FFFFFF;
+}
+
+/*-----------------------
+---------Content----------
+-------------------------*/
+.contact p,
+.phone{
+  padding-top: 10px;
+}
+
+.contact .phone{
+  text-align: center;
+}
+
+/*-------------------------
+---------Media Queries-----
+-------------------------*/
+
+@media(min-width: 22em){
+  .banner-text h1{
+    font-size: 2em;
+  }
+
+  .banner-text p{
+    font-size: 1em;
+  }
+  .main-nav{
+    display: flex;
+  }
+
+  .dropdown{
+    display:none;
+  }
+
+  .contact a{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #6898ce;
+  }
+
+  .contact p,
+  .contact a,
+  .contact span{
+    font-size: 1.25em;
+    margin: 10px 0;
+  }
+}
+@media(min-width: 35em), (orientation:landscape){
 
   .main-nav li{
     width:auto;
     border: 1px solid grey;
+    flex:1;
   }
 
   .main-nav a{
-    padding: 5px 20px;
+    padding: 5px auto;
   }
 
   .main-nav{
@@ -121,26 +209,35 @@ p{
   }
 
   .banner-text{
-    top: 1.5em;
+    top: 1em;
   }
 
-  .about{
+  .about, 
+  .contact{
     width:80%;
-    margin: 0 10%;
-    background-color: #ECECEA;
+    margin: 0 10% 10px 10%;
   }
+
 }
 
 @media(min-width: 52em){
+
+  .main-header{
+    position:fixed;
+    width:100%;
+    top:0;
+  }
   .main-nav{
     justify-content: flex-end;
-    position: fixed;
-    top:0;
-    width:100%;
   }
 
   .main-nav li{
-    margin: 0 1em;
+    margin: 0;
+    flex: initial;
+  }
+
+  .main-nav a{
+    padding: 5px 10px;
   }
 
   body{
@@ -156,3 +253,4 @@ p{
     font-size: 300%;
   }
 }
+

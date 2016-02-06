@@ -5,6 +5,10 @@ $(".main-nav a").hover(function(){
   $(this).removeClass("active");
 });
 
+/*
+  Add a menu button to the header for small screens.
+  When menu is pressed, a dropdown menu of navigation links appears
+*/
 var $dropdown = "<img class= 'dropdown' src= 'img/menu.svg' alt='menu'>";
 
 $(".main-header").prepend($dropdown);
