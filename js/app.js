@@ -22,3 +22,32 @@ $(".dropdown").click((function(event) {
     $(this).addClass('selected');
   }
 }));
+
+// Hide project text by default, on click of picture, show text 
+function showProject(){
+  if($(this).next().css("display") === "none"){
+    $(this).next().slideDown();
+  } else{
+    $(this).next().slideUp();
+  }
+}
+
+$(".projects img").click(showProject);
+//Show text of thermovest when it is clicked
+$(".projects .thermovest h2").click(showProject);
+
+//Apply the shown styling to images and the thermovest text when hovered over
+function addShown(){
+  $(this).addClass("shown");
+}
+
+function removeShown(){
+  if($(this).next().css("display") === "none"){
+    $(this).removeClass("shown");
+  }
+}
+
+$(".projects img").hover(addShown,removeShown);
+//Also apply to thermovest text
+$(".thermovest h2").hover(addShown,removeShown)
+

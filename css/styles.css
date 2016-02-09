@@ -4,12 +4,15 @@
 
 @font-face{
   font-family: OpenSans;
-  src: url('../fonts/OpenSans-Light.ttf');
+  src: url("../fonts/OpenSans-Light.ttf");
 }
 
+@font_face{
+  font-family: BebasNeueLight;
+  src:url("../fonts/BebasNeueLight.otf");
+}
 body{
   font-family: OpenSans;
-  background-color: #ECECEA;
   height: 100vh;
 }
 
@@ -39,10 +42,10 @@ p{
 .main-header{
   display:flex;
   flex-direction: column;
-  background:linear-gradient(rgba(20,20,20,0.55),rgba(20, 20, 20, 0.85));
+  background-color:rgba(255, 255,255, 0.6);
   box-shadow: 0 0 10px;
   z-index: 2;
-
+  position:relative;
 }
 
 
@@ -51,9 +54,6 @@ p{
   flex:1;
   flex-direction: column;
   align-items: center;
-  /*background:linear-gradient(rgba(20,20,20,0.55),rgba(20, 20, 20, 0.85));*/
-  /*box-shadow: 0 0 10px;*/
-  /*z-index: 1;*/
 }
 
 .main-nav li{
@@ -66,7 +66,6 @@ p{
   display:block;
   padding: 0.25em;
   font-size:1.3em;
-  color:white;
 }
 
 .dropdown {
@@ -86,7 +85,6 @@ p{
   padding-left: 0;
   -webkit-filter: saturate(70%);
   max-height: calc(100vh - 40px);
-
 }
 
 .banner{
@@ -94,11 +92,11 @@ p{
 }
 
 .banner-text{
+  font-family: BebasNeueLight;
   position:absolute;
   width:100%;
   top: 0;
   text-align: center;
-  color: white;
 }
 
 .banner-text h1{
@@ -124,21 +122,88 @@ p{
 ---------Content----------
 -------------------------*/
 .about,
-.contact{
+.contact,
+.projects{
   width:90%;
   margin:0 5% 10px 5%;
-  background-color: rgba(190,190,190,0.55);
-  box-shadow: 3px 3px 2px 0 #888888;
-  padding: 0 10px;
-  border-radius: 10px;
 }
 
 .active{
-  box-shadow: inset 0px 0px 10px #FFFFFF;
+  text-decoration: underline;
 }
 
 /*-----------------------
----------Content----------
+---------Projects----------
+-------------------------*/
+.logo{
+  width:80%;
+  display:inline-block;
+  margin: auto;
+}
+
+.projects{
+  display:flex;
+  flex-direction: column;
+}
+
+.project{
+/*  border-top:1px solid black;
+  border-bottom: 1px solid black;*/
+}
+
+.projects h2{
+  text-align: center;
+  font-size: 2em;
+}
+
+.text{
+  display:none;
+  padding-top: 15px;
+}
+
+.projects img,
+.thermovest h2{
+  display:block;
+  padding: 10px;
+  border: 1px solid #6898ce;
+  border-radius: 15px;
+}
+.split{
+  border-top:none;
+}
+
+.shown{
+  box-shadow: inset 0px 0px 10px #000000;
+}
+
+.centered{
+  text-align: center;
+}
+
+.centered p{
+  margin-top: 10px;
+}
+
+/*
+  The h2 element of thermovest is the one to be clicked because there is no 
+  img available. Set the styling of the thermovest h2 element to be like project
+  logos so that users know it is clickable
+*/
+.thermovest h2{
+  display:inline-block;
+  margin-top: 25px;
+}
+
+.thermovest{
+  text-align:center;
+}
+
+.thermovest .text{
+  text-align: left;
+}
+
+/*-----------------------
+---------Contact----------
 -------------------------*/
 .contact p,
 .phone{
@@ -181,6 +246,18 @@ p{
     font-size: 1.25em;
     margin: 10px 0;
   }
+  .projects{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .project{
+    width:50%;
+    padding: 0 10px;
+  }
+
+  .thermovest{
+    width:100%;
+  }
 }
 @media(min-width: 35em), (orientation:landscape){
 
@@ -191,7 +268,7 @@ p{
   }
 
   .main-nav a{
-    padding: 5px auto;
+    padding: 5px;
   }
 
   .main-nav{
@@ -218,6 +295,13 @@ p{
     margin: 0 10% 10px 10%;
   }
 
+  .project{
+    width: 33%;
+  }
+
+  .thermovest h2{
+    margin-top:8px;
+  }
 }
 
 @media(min-width: 52em){
@@ -234,10 +318,12 @@ p{
   .main-nav li{
     margin: 0;
     flex: initial;
+    margin: 0 10px;
+    border-radius: 5px;
   }
 
   .main-nav a{
-    padding: 5px 10px;
+    padding: 5px 15px;
   }
 
   body{
@@ -251,6 +337,10 @@ p{
 
   .banner p{
     font-size: 300%;
+  }
+
+  .projects{
+    padding-top: 50px;
   }
 }
 
