@@ -27,7 +27,6 @@ h2{
 }
 
 a{
-  color:black;
   text-decoration: none;
 }
 
@@ -118,6 +117,7 @@ p{
   display:block;
   padding: 0.25em;
   font-size:1.3em;
+  color:black;
 }
 
 .dropdown {
@@ -214,9 +214,9 @@ section{
   flex-direction: column;
 }
 
-.project{
-/*  border-top:1px solid black;
-  border-bottom: 1px solid black;*/
+.projects h3{
+  display:block;
+  width:100%;
 }
 
 .projects h2{
