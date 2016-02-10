@@ -23,13 +23,19 @@ $(".dropdown").click((function(event) {
   }
 }));
 
-// Hide project text by default, on click of picture, show text 
+// Hide project text by default 
+$(document).ready(function(){
+  $(".projects .text").css("display", "none");
+});
+
+// When picture or thermovest text is clicked, show text
 function showProject(){
-  if($(this).next().css("display") === "none"){
-    $(this).next().slideDown();
-  } else{
-    $(this).next().slideUp();
-  }
+  $(this).next().slideToggle();
+  // if($(this).next().css("display") === "none"){
+  //   $(this).next().slideDown();
+  // } else{
+  //   $(this).next().slideUp();
+  // }
 }
 
 $(".projects img").click(showProject);
@@ -50,4 +56,18 @@ function removeShown(){
 $(".projects img").hover(addShown,removeShown);
 //Also apply to thermovest text
 $(".thermovest h2").hover(addShown,removeShown)
+
+
+//Hide interests text by default, when icon is clicked show text
+
+//when the document loads, hide text. Allows Javascript to be unobtrusive 
+$(document).ready(function(){
+  $(".gallery .text").hide();
+});
+
+//when icons are clicked, show text
+$(".icon").click(function(){
+  $(this).next().slideToggle();
+});
+
 

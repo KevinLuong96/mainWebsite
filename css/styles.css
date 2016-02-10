@@ -3,13 +3,13 @@
 }
 
 @font-face{
-  font-family: OpenSans;
+  font-family: "OpenSans";
   src: url("../fonts/OpenSans-Light.ttf");
 }
 
-@font_face{
-  font-family: BebasNeueLight;
-  src:url("../fonts/BebasNeueLight.otf");
+@font-face{
+  font-family: "BebasNeueLight";
+  src: url("../fonts/BebasNeueLight.otf");
 }
 body{
   font-family: OpenSans;
@@ -33,6 +33,58 @@ a{
 
 p{
   margin:0;
+}
+
+/* Float Shadow */
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, 
+    rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, 
+    rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before, 
+.hvr-float-shadow:focus:before, 
+.hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
 /*-----------------------
@@ -92,19 +144,19 @@ p{
 }
 
 .banner-text{
-  font-family: BebasNeueLight;
+  font-family: "BebasNeueLight";
   position:absolute;
   width:100%;
-  top: 0;
+  top: 5%;
   text-align: center;
 }
 
 .banner-text h1{
-  font-size: 1em;
+  font-size: 2em;
 }
 
 .banner-text p{
-  font-size: 0.5em;
+  font-size: 1em;
   margin-top: -0.15em;
 }
 .background{
@@ -121,15 +173,31 @@ p{
 /*-----------------------
 ---------Content----------
 -------------------------*/
-.about,
-.contact,
-.projects{
+section{
   width:90%;
   margin:0 5% 10px 5%;
 }
 
 .active{
   text-decoration: underline;
+}
+
+/*-----------------------
+-----------Home----------
+-------------------------*/
+.gallery{
+  display:flex;
+  flex-wrap: wrap;
+}
+.gallery li{
+  width:100%;
+}
+.icon{
+  width:100%;
+}
+
+.interests{
+  padding-top: 25px;
 }
 
 /*-----------------------
@@ -157,7 +225,6 @@ p{
 }
 
 .text{
-  display:none;
   padding-top: 15px;
 }
 
@@ -165,7 +232,7 @@ p{
 .thermovest h2{
   display:block;
   padding: 10px;
-  border: 1px solid #6898ce;
+  border: 1px solid #7395AD;
   border-radius: 15px;
 }
 .split{
@@ -237,7 +304,7 @@ p{
   .contact a{
     border-radius: 5px;
     padding: 5px;
-    background-color: #6898ce;
+    background-color: #83BBCB;
   }
 
   .contact p,
@@ -258,6 +325,7 @@ p{
   .thermovest{
     width:100%;
   }
+
 }
 @media(min-width: 35em), (orientation:landscape){
 
@@ -289,10 +357,14 @@ p{
     top: 1em;
   }
 
-  .about, 
-  .contact{
+  section{
     width:80%;
     margin: 0 10% 10px 10%;
+  }
+
+  .gallery li{
+    width:50%;
+    padding:0 10px;
   }
 
   .project{
@@ -300,7 +372,8 @@ p{
   }
 
   .thermovest h2{
-    margin-top:8px;
+    padding: 8px;
+    margin: 0;
   }
 }
 
@@ -329,6 +402,15 @@ p{
   body{
     margin-top: 40px;
     min-height: 100vh;
+  }
+
+  section{
+    width:80%;
+    margin:0 10% 100px 10%;
+  }
+
+  .gallery li{
+    width:25%;
   }
 
   .banner h1{
