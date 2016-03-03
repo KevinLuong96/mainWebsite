@@ -1,428 +1,407 @@
 *{
-  box-sizing:border-box;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
 
-@font-face{
-  font-family: "OpenSans";
-  src: url("../fonts/OpenSans-Light.ttf");
-}
+/*#split{
+  width: 5%;
+  margin: 10px 0 10px 0;
+}*/
 
-@font-face{
-  font-family: "BebasNeueLight";
-  src: url("../fonts/BebasNeueLight.otf");
-}
-body{
-  font-family: OpenSans;
-  height: 100vh;
-}
-
-h1{
-  font-weight: normal;
-  margin: 0;
-}
-
-h2{
-  font-weight: normal;
-  margin: 0.25em 0;
-}
 
 a{
   text-decoration: none;
 }
 
-p{
+body{
+  background-color: #f2f2f2;
+}
+.main-nav{
+  background-color: #6995CA;
+}
+
+.menu-bar{
+  text-align: right;
+  background-color: #D1D1D1;
+  height:51px;
+  width:80%;
+  margin:auto;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right:1px solid black;
+}
+
+.menu-bar button{
+  background: #0097FE;
+  color:white;
+  border:none;
+  border-left: 1px solid black;
+  border-radius: 0;
+  margin:0;
+  height:100%;
+  z-index:1000;
+}
+
+.help-overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0 ;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#help-cancel{
+  width: 40px;
+  position: fixed;
+  top:1%;
+  right: 2%;
+}
+
+.arrow{
+  position: absolute;
+  width:30px;
+  z-index: 100;
+  left: 22%;
+}
+
+#left-arrow,
+#right-arrow{
+  width:50px;
+  position: absolute;
+  top:40%;
+}
+
+#left-arrow{
+  left: 0;
+}
+
+#right-arrow{
+  right:0;
+}
+
+.name-arrow{
+  top: 50%;
+}
+
+.transaction-arrow{
+  top:62%;
+}
+
+.second-arrow{
+  display:none;
+}
+.name-help,
+.transaction-help,
+.people-help{
+  position: absolute;
+  z-index: 2;
+  background-color: #FFFFFF;
+  border: 1px solid #0076FE;
+  border-radius: 5px; 
+  width: 85%;
+  left: 20%;
+}
+
+.name-help{
+  top:66%;
+}
+
+.transaction-help{
+  top:72%;
+}
+
+.people-help{
+  top:103%;
+}
+
+.people-arrow{
+  top:89%;
+}
+.main-header{
+  text-align: center;
+  width:100%;
+  background-color:#6995CA;
+}
+
+.main-header h1{
+  color:white;
+  font-size: 10em;
   margin:0;
 }
 
-/* Float Shadow */
-.hvr-float-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-float-shadow:before {
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-  content: '';
-  top: 100%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, 
-    rgba(0, 0, 0, 0) 80%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, 
-    rgba(0, 0, 0, 0) 80%);
-  /* W3C */
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform, opacity;
-  transition-property: transform, opacity;
-}
-.hvr-float-shadow:hover,
-.hvr-float-shadow:focus,
-.hvr-float-shadow:active {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-  /* move the element up by 5px */
-}
-.hvr-float-shadow:hover:before, 
-.hvr-float-shadow:focus:before, 
-.hvr-float-shadow:active:before {
-  opacity: 1;
-  -webkit-transform: translateY(5px);
-  transform: translateY(5px);
-  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+.container{
+  text-align: center;
+  width:90%;
+  margin:auto;
+  min-height: calc( 100vh - 250px) ;
+  height:auto;
 }
 
-/*-----------------------
----------Header----------
--------------------------*/
+input[type="text"]{
+  width:60%;
+  padding: 10px;
+  margin:5px;
+  border:none;
+  border-bottom: 1px solid black;
+}
 
-.main-header{
+.name{
+  width:80%;
+  margin:auto;
+/*  border: 1px solid navy;
+  border-radius: 15px;*/
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+#name{
+  display:block;
+  margin:auto;
+}
+.name h4{
+  padding-top:10px;
+}
+#holder{
+  width:100%;
   display:flex;
-  flex-direction: column;
-  background-color:rgba(255, 255,255, 0.6);
-  box-shadow: 0 0 10px;
-  z-index: 2;
-  position:relative;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top:10px;
+}
+
+.transaction h4,
+#input{
+  width:100%;
+}
+
+h4{
+  margin: 10px;
+  font-size: 1.25em;
 }
 
 
-.main-nav{
-  display:none;
-  flex:1;
+#input{
+  display:flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-nav li{
-  width:100%;
-  text-align: center;
-  border-bottom: 1px solid grey;
+.user{
+  width:80%;
+/*  border: 1px solid black;
+  border-radius: 15px;*/
+  margin: 25px 10% 0 10%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  background-color:#FFFFFF;
 }
 
-.main-nav a{
-  display:block;
-  padding: 0.25em;
-  font-size:1.3em;
-  color:black;
+.selected{
+  box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.25);
 }
 
-.dropdown {
-  width:20px;
-  align-self: flex-end;
-  margin: 2px;
-  margin-left:auto;
-  margin-right: 2px;
-}
-
-
-/*-----------------------
----------Banner----------
--------------------------*/
-.background img{
-  width:100%;
-  padding-left: 0;
-  -webkit-filter: saturate(70%);
-  max-height: calc(100vh - 40px);
-}
-
-.banner{
+.transaction{
+  width: 80%;
+  margin: 25px 10% 0 10%;
+/*  border: 1px solid navy;
+  border-radius: 15px;*/
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   position:relative;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
 }
 
-.banner-text{
-  font-family: "BebasNeueLight";
-  position:absolute;
-  width:100%;
-  top: 5%;
+button {
+  padding: 5px 25px;
+  margin:10px 0;
+  background-color: #FFFFFF;
+  border: 1px solid navy;
+  border-radius:15px;
+}
+
+.user button{
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  border:none;
+  margin-top:0.75em;
+}
+
+#undo{
+  height:30px;
+  margin-left: 10px;
+  position: absolute;
+  bottom: 16px;
+}
+
+.user input[type="text"]{
+  font-size:1.5em;
+  padding:0;
+  border:1px dashed black;
+  margin-top: 0.75em;
   text-align: center;
+  height:29px;
 }
 
-.banner-text h1{
-  font-size: 2em;
-}
-
-.banner-text p{
-  font-size: 1em;
-  margin-top: -0.15em;
-}
-.background{
+.user h2{
+  padding-top:0.75em;
   margin:0;
 }
 
-.banner a{
-  position:absolute;
-  bottom: 1em;
-  left:0;
-  color:white;
-  font-size: 0.5em;
-}
-/*-----------------------
----------Content----------
--------------------------*/
-section{
-  width:90%;
-  margin:0 5% 10px 5%;
-}
-
-.active{
-  text-decoration: underline;
-}
-
-/*-----------------------
------------Home----------
--------------------------*/
-.gallery{
-  display:flex;
-  flex-wrap: wrap;
-}
-.gallery li{
-  width:100%;
-}
-.icon{
-  width:100%;
-}
-
-.interests{
-  padding-top: 25px;
-}
-
-/*-----------------------
----------Projects----------
--------------------------*/
-.logo{
+.transaction-list{
+  display:none;
   width:80%;
-  display:inline-block;
-  margin: auto;
+  margin:auto;
+  border-top: 1px solid black;
 }
 
-.projects{
-  display:flex;
-  flex-direction: column;
-}
-
-.projects h3{
-  display:block;
-  width:100%;
-}
-
-.projects h2{
-  text-align: center;
-  font-size: 2em;
-}
-
-.text{
-  padding-top: 15px;
-}
-
-.projects img,
-.thermovest h2{
-  display:block;
-  padding: 10px;
-  border: 1px solid #7395AD;
-  border-radius: 15px;
-}
-.split{
-  border-top:none;
-}
-
-.shown{
-  box-shadow: inset 0px 0px 10px #000000;
-}
-
-.centered{
-  text-align: center;
-}
-
-.centered p{
-  margin-top: 10px;
-}
-
-/*
-  The h2 element of thermovest is the one to be clicked because there is no 
-  img available. Set the styling of the thermovest h2 element to be like project
-  logos so that users know it is clickable
-*/
-.thermovest h2{
-  display:inline-block;
-  margin-top: 25px;
-}
-
-.thermovest{
-  text-align:center;
-}
-
-.thermovest .text{
-  text-align: left;
-}
-
-/*-----------------------
----------Contact----------
--------------------------*/
-.contact p,
-.phone{
-  padding-top: 10px;
-}
-
-.contact .phone{
-  text-align: center;
-}
-
-/*-------------------------
----------Media Queries-----
--------------------------*/
-
-@media(min-width: 22em){
-  .banner-text h1{
-    font-size: 2em;
+@media(min-width: 41em){
+  .user{
+    width:45%;
+    margin: 10px;
   }
 
-  .banner-text p{
-    font-size: 1em;
+  .user button{
+    padding: 15px;
   }
-  .main-nav{
+
+  .transaction,
+  .name{
+    width:70%;
+    margin: 25px auto;
+  }
+
+  .people-arrow{
+    top:88%;
+  }
+
+  .people-help{
+    top: 100%;
+  }
+
+}
+
+@media(min-width: 50em){
+
+  input[type="text"]{
+    width: 40%;
+  }
+
+  #input{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container{
     display: flex;
-  }
-
-  .dropdown{
-    display:none;
-  }
-
-  .contact a{
-    border-radius: 5px;
-    padding: 5px;
-    background-color: #83BBCB;
-  }
-
-  .contact p,
-  .contact a,
-  .contact span{
-    font-size: 1.25em;
-    margin: 10px 0;
-  }
-  .projects{
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-  }
-  .project{
-    width:50%;
-    padding: 0 10px;
+    justify-content: flex-start;
+    align-items: center;
   }
 
-  .thermovest{
+  .name,
+  .transaction{
+    width: 40%;
+    margin: 10px;
+  }
+
+  #accept{
+    margin:16px 0;
+    padding:5px 25pxß;
+  }
+
+  .name h4{
+    padding:0;
+    }
+
+  .name-arrow{
+    left: 30%;
+  }
+
+  .name-help{
+    top:63.5%;
+    left: 28%;
+  }
+
+
+  .arrow{
+    top:50%;
+  }
+
+  .second-arrow{
+    display:block;
+    left: 53%;
+  }
+  
+  .transaction-arrow{
+    left:10%;
+  }
+
+  .transaction-help{
+    top: 63%;
+    left: 9%;
+  }
+
+  .people-help{
+    top:102%;
+    width:150%;
+  }
+
+  .people-arrow{
+    top: 89%;
+  }
+  
+  .sidebar{
     width:100%;
+    display:flex;
+    justify-content: center;
   }
 
-}
-@media(min-width: 35em), (orientation:landscape){
-
-  .main-nav li{
-    width:auto;
-    border: 1px solid grey;
-    flex:1;
-  }
-
-  .main-nav a{
-    padding: 5px;
-  }
-
-  .main-nav{
-    /*display:flex;*/
+  #holder{
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 80%;
+    overflow: visible;
+    align-items: flex-start;
   }
 
-  .banner h1{
-    font-size:300%;
+  .user{
+    width: 45%;
   }
 
-  .banner p{
-    font-size:larger;
+  .user button{
+    padding: 10px;
   }
 
-  .banner-text{
-    top: 1em;
-  }
-
-  section{
-    width:80%;
-    margin: 0 10% 10px 10%;
-  }
-
-  .gallery li{
-    width:50%;
-    padding:0 10px;
-  }
-
-  .project{
-    width: 33%;
-  }
-
-  .thermovest h2{
-    padding: 8px;
-    margin: 0;
-  }
 }
 
-@media(min-width: 52em){
-
-  .main-header{
-    position:fixed;
-    width:100%;
-    top:0;
-  }
-  .main-nav{
-    justify-content: flex-end;
+@media(min-width:70em){
+  .sidebar{
+    width: 40%;
+    flex-direction: column;
   }
 
-  .main-nav li{
-    margin: 0;
-    flex: initial;
-    margin: 0 10px;
-    border-radius: 5px;
-  }
-
-  .main-nav a{
-    padding: 5px 15px;
-  }
-
-  body{
-    margin-top: 40px;
-    min-height: 100vh;
-  }
-
-  section{
+  .container{
     width:80%;
-    margin:0 10% 100px 10%;
+    margin: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .name,
+  .transaction{
+    width: 90%;
   }
 
-  .gallery li{
-    width:25%;
+  #holder{
+    width:60%;
   }
 
-  .banner h1{
-    font-size: 500%;
-  }
 
-  .banner p{
-    font-size: 300%;
-  }
-
-  .projects{
-    padding-top: 50px;
-  }
 }
-

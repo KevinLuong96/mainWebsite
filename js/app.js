@@ -30,7 +30,13 @@ $(document).ready(function(){
 
 // When picture or thermovest text is clicked, show text
 function showProject(){
-  $(this).next().slideToggle();
+  $(this).next().slideToggle('fast', function(){
+    if($(this).height() > 0) {
+      $('html, body').animate({
+        scrollTop: $(this).offset().top
+      }, 1000);
+    }
+  });
   // if($(this).next().css("display") === "none"){
   //   $(this).next().slideDown();
   // } else{
@@ -67,7 +73,14 @@ $(document).ready(function(){
 
 //when icons are clicked, show text
 $(".icon").click(function(){
-  $(this).next().slideToggle();
+  $(this).next().slideToggle('fast', function(){
+    if($(this).height() > 0) {
+      $('html, body').animate({
+        scrollTop: $(this).offset().top
+      }, 1000);
+    }
+  });
+
 });
 
 
