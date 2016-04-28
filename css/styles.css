@@ -212,6 +212,9 @@ p{
 .projects{
   display:flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
 }
 
 .projects h3{
@@ -235,6 +238,11 @@ p{
   border: 1px solid #7395AD;
   border-radius: 15px;
 }
+
+.project{
+  margin: 15px 0 15px 0;
+}
+
 .split{
   border-top:none;
 }
@@ -267,6 +275,11 @@ p{
 
 .thermovest .text{
   text-align: left;
+}
+
+.lights img{
+  border:none;
+  padding: 0;
 }
 
 /*-----------------------
@@ -375,6 +388,7 @@ p{
 
   .project{
     width: 33%;
+    flex: 1 1 33%;
   }
 
   .thermovest h2{
@@ -430,6 +444,7 @@ p{
 
   .projects{
     padding-top: 50px;
+    width: 100%;
   }
 
   .banner{
@@ -452,6 +467,11 @@ p{
 
   .background img{
     height:100vh;
+  }
+
+  .text{
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
