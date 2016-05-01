@@ -9,7 +9,7 @@ In creating this website, I was able to learn many skills that were transferable
 skills I have learned since the creation of the site.
 
 ##Built With
--HTML
--CSS
--JavaScript
--jQuery
+*HTML
+*CSS
+*JavaScript
+*jQuery
